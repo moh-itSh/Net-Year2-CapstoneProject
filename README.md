@@ -1,4 +1,12 @@
 # Net-Year2-CapstoneProject
+- Led network planning and infrastructure design, including VLAN setup.  
+- Configured FortiGate firewall policies and IPsec tunnels.  
+- Implemented OSPF/OSPFv3 routing protocols for efficiency.  
+- Integrated IPv6 addressing and deployed SD-WAN technology.  
+- Set up the Teams phone system and configured QoS for traffic shaping.  
+- Implemented security measures like ACLs and SSL VPN for remote access.  
+- Maintained documentation for configurations and troubleshooting.  
+
 
 For our build, we focused on constructing Site 1 (HQ) and Site 3 (Plant).we configured our own ISP router for the purposes of SD-WAN and assigned static IP addresses to ourselves. This setup allows us full control to troubleshoot connectivity issues that may arise. 
 Site 1 routes all traffic through the FortiGate routers, which are configured in an Active-Active HA (High Availability) mode. Furthermore, we have a fully link-aggregated group (LAG) environment, including connections to our FortiGate firewalls. Initially, our topology differed significantly from our current layout. However, we quickly learned that we were unable to route similar VLANs through multiple LAGs. Consequently, we limited the FortiGate LAG interfaces to one by having our endpoint switches connect to our two distribution switches. These two distribution switches provide added redundancy. The advantages of this topology include enhanced scalability and a fully LAG-configured environment, resulting in improved speeds and link redundancy. Additionally, this configuration allows us to have an isolated switch dedicated solely to clients and servers, which can alleviate traffic stress and increase device reliability. 
